@@ -215,7 +215,7 @@ A bright spike is a **question, not an answer**. Confirming RFI means considerin
 ### 👋 Author
 
 **Luthando Candlovu**
-Computer Science Honours Student · South Africa 🇿🇦
+Participant in the Traning · South Africa 🇿🇦
 
 [![GitHub](https://img.shields.io/badge/GitHub-LuthandoCandlovu-0B1F3A?style=for-the-badge&logo=github&logoColor=F5B942)](https://github.com/LuthandoCandlovu)
 
