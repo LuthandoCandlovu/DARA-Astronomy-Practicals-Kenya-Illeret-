@@ -1,124 +1,95 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B1F3A,50:0E7C86,100:F5B942&height=240&section=header&text=DARA%20Astronomy%20Practicals&fontSize=50&fontColor=ffffff&animation=twinkling&fontAlignY=36&desc=Toolkit%20for%20Optical%20%E2%80%A2%20Radio%20%E2%80%A2%20RFI%20%E2%80%A2%20Data%20Reduction&descSize=18&descAlignY=58" alt="DARA Astronomy Practicals banner" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B1F3A,55:0E7C86,100:F5B942&height=230&section=header&text=DARA%20Astronomy%20Practicals&fontSize=50&fontColor=ffffff&animation=twinkling&fontAlignY=38&desc=Optical%20%C2%B7%20Radio%20%C2%B7%20RFI%20%C2%B7%20Data%20Reduction&descSize=18&descAlignY=60" alt="DARA Astronomy Practicals banner" width="100%"/>
 
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=F5B942&center=true&vCenter=true&width=720&lines=%F0%9F%94%AD+Inspect+FITS+images+from+optical+telescopes;%F0%9F%93%A1+Explore+radio+%2F+RMI+measurement+time-series;%F0%9F%93%B6+Hunt+for+RFI+candidates+in+frequency+spectra;%F0%9F%93%8A+Reduce+data+and+summarise+it+with+statistics" alt="Typing animation"/>
-</a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1400&color=F5B942&center=true&vCenter=true&width=700&lines=Inspect+FITS+images;Explore+radio+%2F+RMI+time+series;Flag+RFI+candidates+in+frequency+spectra;Reduce+data+and+summarise+it" alt="Typing animation of the four modules"/></a>
 
 <br/>
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-0B1F3A?style=for-the-badge&logo=python&logoColor=F5B942)
-![Streamlit](https://img.shields.io/badge/Streamlit-App-0E7C86?style=for-the-badge&logo=streamlit&logoColor=white)
-![Astropy](https://img.shields.io/badge/FITS-Astronomy-F5B942?style=for-the-badge&logo=nasa&logoColor=0B1F3A)
-![Platform](https://img.shields.io/badge/Windows-PowerShell-0B1F3A?style=for-the-badge&logo=windows&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Learning%20Toolkit-0E7C86?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.10+-0B1F3A?style=flat-square&logo=python&logoColor=F5B942)
+![Streamlit](https://img.shields.io/badge/Streamlit-app-0E7C86?style=flat-square&logo=streamlit&logoColor=white)
+![Data](https://img.shields.io/badge/Data-FITS%20%7C%20CSV-0B1F3A?style=flat-square)
+![Platform](https://img.shields.io/badge/Windows-PowerShell-0E7C86?style=flat-square&logo=windows&logoColor=white)
+![Status](https://img.shields.io/badge/Status-learning%20toolkit-F5B942?style=flat-square&labelColor=0B1F3A)
 
-**A Python / Streamlit starter application for exploring four practical areas of astronomy training.**
-*Built from the DARA practicals completed in Kenya* 🇰🇪
+**A Python / Streamlit starter app for four practical areas of astronomy training, developed from the DARA practicals completed in Kenya.**
 
-[✨ Overview](#-overview) •
-[🧭 Modules](#-modules) •
-[🚀 Quick Start](#-quick-start) •
-[📂 Data Formats](#-data-formats) •
-[🛣️ Roadmap](#%EF%B8%8F-roadmap)
+[Overview](#overview) · [Architecture](#architecture) · [Modules](#modules) · [Quick start](#quick-start) · [RFI workflow](#rfi-workflow) · [Data](#data-formats) · [Roadmap](#roadmap)
 
 </div>
 
 ---
 
-## ✨ Overview
+## Overview
 
-This toolkit brings the core skills practised in astronomy training into **one interactive browser app**. Pick a practical from the sidebar, upload your data, and explore it visually: no notebooks to juggle, no scripts to rewrite.
+One interactive browser app for the core skills of astronomy data work. Pick a practical in the sidebar, upload your data, and explore it visually.
 
-<div align="center">
-
-| 🔭 Optical | 📡 Radio / RMI | 📶 RFI | 📊 Data Reduction |
-|:---:|:---:|:---:|:---:|
-| FITS image inspection | Measurement time-series | Frequency-spectrum exploration | Descriptive statistics |
-| `.fits` | `.csv` | `.csv` | `.csv` |
-
-</div>
+<table>
+<tr>
+<td width="25%" valign="top"><b>01 · Optical</b><br/><sub>FITS images and their 2D image planes</sub></td>
+<td width="25%" valign="top"><b>02 · Radio / RMI</b><br/><sub>Measurement time series, one or many columns</sub></td>
+<td width="25%" valign="top"><b>03 · RFI</b><br/><sub>Frequency spectra with candidate flagging</sub></td>
+<td width="25%" valign="top"><b>04 · Reduction</b><br/><sub>Descriptive statistics for numeric fields</sub></td>
+</tr>
+</table>
 
 > [!IMPORTANT]
-> **Scientific note.** This is a general-purpose learning toolkit, **not** a reconstruction of a specific DARA Kenya practical. Upload only data you are permitted to use, document its source and units, and check instrument-specific requirements.
-> High-power spectrum points are **candidates for investigation**, not automatically confirmed RFI.
+> **Scientific note.** This is a general-purpose learning toolkit, not a reconstruction of a specific DARA Kenya practical. Upload data you are permitted to use, document its source and units, and check instrument-specific requirements. High-power spectrum points are only candidates for investigation; they are not automatically confirmed RFI.
 
 ---
 
-## 🧭 Modules
-
-<div align="center">
+## Architecture
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'primaryColor':'#0B1F3A','primaryTextColor':'#ffffff','primaryBorderColor':'#0E7C86','lineColor':'#F5B942','secondaryColor':'#0E7C86','tertiaryColor':'#0B1F3A','fontFamily':'Segoe UI, Arial'}}}%%
 flowchart LR
-    A([🌌 DARA Toolkit<br/>app.py]) --> B[🔭 Optical Astronomy]
-    A --> C[📡 Radio / RMI]
-    A --> D[📶 RFI Spectrum]
-    A --> E[📊 Data Reduction]
-
-    B --> B1[/FITS image<br/>2D plane/]
-    C --> C1[/CSV time-series<br/>numeric columns/]
-    D --> D1[/CSV frequency<br/>+ power/]
-    E --> E1[/CSV numeric<br/>fields/]
-
-    B1 --> V[🖼️ Interactive plots<br/>in your browser]
-    C1 --> V
-    D1 --> V
-    E1 --> V
-
-    style A fill:#0B1F3A,stroke:#F5B942,color:#ffffff,stroke-width:2px
-    style B fill:#0E7C86,stroke:#0B1F3A,color:#ffffff
-    style C fill:#0E7C86,stroke:#0B1F3A,color:#ffffff
-    style D fill:#0E7C86,stroke:#0B1F3A,color:#ffffff
-    style E fill:#0E7C86,stroke:#0B1F3A,color:#ffffff
-    style V fill:#F5B942,stroke:#0B1F3A,color:#0B1F3A,stroke-width:2px
+    IN(["Your data<br/>.fits / .csv"]) --> APP["Streamlit app<br/>app.py"]
+    APP --> M1["01 Optical"]
+    APP --> M2["02 Radio / RMI"]
+    APP --> M3["03 RFI spectrum"]
+    APP --> M4["04 Data reduction"]
+    M1 --> OUT(["Plots and statistics<br/>in your browser"])
+    M2 --> OUT
+    M3 --> OUT
+    M4 --> OUT
+    style APP fill:#0E7C86,stroke:#F5B942,color:#ffffff,stroke-width:2px
+    style OUT fill:#F5B942,stroke:#0B1F3A,color:#0B1F3A,stroke-width:2px
 ```
 
-</div>
-
-### 🔭 1. Optical Astronomy: FITS Image Inspection
-Load a FITS file, inspect its header, and view the 2D image plane. A first step in any imaging pipeline: check the data before you reduce it.
-
-### 📡 2. Radio / RMI Time-Series Exploration
-Upload a CSV with one or more numeric measurement columns and watch how signals evolve over time. Useful for spotting drifts, steps, and unusual behaviour.
-
-### 📶 3. RFI Frequency-Spectrum Exploration
-Plot measured power against frequency and flag high-power points as **RFI candidates**. Radio-frequency interference is a daily reality for radio telescopes, so the first skill is learning to *see* it.
-
-### 📊 4. General Data Reduction & Descriptive Statistics
-Summarise any numeric CSV with mean, median, spread and more, the foundation under every other module.
-
----
-
-## 🔄 How a Practical Flows
-
-<div align="center">
+### Session flow
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'primaryColor':'#0B1F3A','primaryTextColor':'#ffffff','primaryBorderColor':'#0E7C86','lineColor':'#F5B942','actorBkg':'#0B1F3A','actorTextColor':'#ffffff','actorBorder':'#F5B942','signalColor':'#0E7C86','noteBkgColor':'#F5B942','noteTextColor':'#0B1F3A'}}}%%
 sequenceDiagram
     autonumber
-    actor You as 👩‍🔬 You
-    participant App as 🖥️ Streamlit App
-    participant Data as 📁 Your Data
-    participant Plot as 📈 Visualisation
-
-    You->>App: streamlit run app.py
-    App-->>You: Opens in browser 🌐
-    You->>App: Choose a practical (sidebar)
-    You->>Data: Upload FITS / CSV
-    Data->>App: Parse & validate
-    App->>Plot: Build plots + statistics
-    Plot-->>You: Explore, inspect, interpret ✨
+    actor U as You
+    participant A as Streamlit app
+    participant D as Your file
+    participant P as Plots
+    U->>A: streamlit run app.py
+    A-->>U: Opens in browser
+    U->>A: Choose a practical
+    U->>D: Upload FITS or CSV
+    D->>A: Parse and validate
+    A->>P: Build plots and statistics
+    P-->>U: Explore and interpret
+    Note over U,P: Interpretation stays with you
 ```
-
-</div>
 
 ---
 
-## 🚀 Quick Start
+## Modules
 
-### 🪟 Windows PowerShell
+| # | Module | Input | What you can do |
+|:-:|:--|:-:|:--|
+| 01 | **Optical astronomy** | `FITS` | Open an image file and inspect its 2D image plane before any reduction |
+| 02 | **Radio / RMI** | `CSV` | Plot numeric measurement columns over time to spot drifts, steps and anomalies |
+| 03 | **RFI spectrum** | `CSV` | Plot measured power against frequency and highlight high-power candidates |
+| 04 | **Data reduction** | `CSV` | Compute descriptive statistics for any set of numeric fields |
+
+---
+
+## Quick start
 
 ```powershell
 python -m venv .venv
@@ -129,11 +100,10 @@ streamlit run app.py
 ```
 
 <details>
-<summary><b>🔒 Activation blocked? Click here</b></summary>
-
+<summary><b>PowerShell blocks activation?</b></summary>
 <br/>
 
-Use the virtual environment directly, with no activation needed:
+Use the virtual environment's Python directly:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
@@ -142,85 +112,75 @@ Use the virtual environment directly, with no activation needed:
 
 </details>
 
-The app opens in your browser. Choose a practical from the sidebar and upload a FITS or CSV file as appropriate. 🎉
+The app opens in your browser. Choose a practical from the sidebar and upload a FITS or CSV file as appropriate.
 
 ---
 
-## 📂 Data Formats
+## RFI workflow
 
-| Module | Format | Required content |
-|:--|:--:|:--|
-| 🔭 **Optical** | `FITS` | An image containing a 2D image plane |
-| 📡 **Radio / RMI** | `CSV` | One or more numeric measurement columns |
-| 📶 **RFI** | `CSV` | Numeric **frequency** and measured **power** columns |
-| 📊 **Data Reduction** | `CSV` | Numeric fields to summarise |
-
-> [!NOTE]
-> The toolkit does **not** download training datasets automatically. Obtain data from a documented public archive, or use data you are authorised to share. Always include **attribution, units, instrument details and licensing** where applicable.
-
----
-
-## 🧪 Reading an RFI Spectrum
-
-<div align="center">
+A high-power point is a question, not an answer. Treat it like this:
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'primaryColor':'#0B1F3A','primaryTextColor':'#ffffff','primaryBorderColor':'#0E7C86','lineColor':'#F5B942','fontFamily':'Segoe UI, Arial'}}}%%
 flowchart TD
-    S[📶 Spectrum loaded] --> P{Point well above<br/>the noise floor?}
-    P -- No --> N[✅ Likely noise / astronomical signal]
-    P -- Yes --> C[🚩 Mark as RFI candidate]
-    C --> Q{Check context}
-    Q --> T[⏱️ Time behaviour]
-    Q --> F[📻 Known frequency allocations]
-    Q --> O[🔭 Observing setup]
-    Q --> I[🛠️ Instrument behaviour]
-    T --> R[🧾 Document & decide]
+    S["Spectrum loaded"] --> Q{"Point well above<br/>the noise floor?"}
+    Q -- No --> N["Likely noise or<br/>astronomical signal"]
+    Q -- Yes --> C["Mark as RFI candidate"]
+    C --> T["Time behaviour"]
+    C --> F["Frequency context"]
+    C --> O["Observing setup"]
+    C --> I["Instrument behaviour"]
+    T --> R["Document and decide"]
     F --> R
     O --> R
     I --> R
-
-    style S fill:#0B1F3A,stroke:#F5B942,color:#fff
     style C fill:#F5B942,stroke:#0B1F3A,color:#0B1F3A
-    style R fill:#0E7C86,stroke:#0B1F3A,color:#fff
+    style R fill:#0E7C86,stroke:#F5B942,color:#ffffff
 ```
 
-</div>
+---
 
-A bright spike is a **question, not an answer**. Confirming RFI means considering time, frequency, observing context and instrument behaviour together.
+## Data formats
+
+| Module | Format | Required content |
+|:--|:-:|:--|
+| Optical | FITS | Image containing a 2D image plane |
+| Radio / RMI | CSV | One or more numeric measurement columns |
+| RFI | CSV | Numeric frequency and measured-power columns |
+| Data reduction | CSV | Numeric fields to summarise |
+
+> [!NOTE]
+> The toolkit does not download training datasets automatically. Obtain data from a documented public archive, or use data you are authorised to share. Include attribution, units, instrument details and licensing where applicable.
 
 ---
 
-## 🛣️ Roadmap
+## Roadmap
 
-- [ ] 🧪 Add tests and example datasets with known provenance
-- [ ] 🌍 Add celestial coordinate handling using **WCS**
-- [ ] 📡 Add radio calibration and domain-specific reduction, once the instrument/data format is known
-- [ ] 🛡️ Add validated RFI analysis that considers time, frequency, observing context and instrument behaviour
+- [ ] Tests and example datasets with known provenance
+- [ ] Celestial coordinate handling using WCS
+- [ ] Radio calibration and domain-specific reduction, once the instrument and data format are known
+- [ ] Validated RFI analysis that considers time, frequency, observing context and instrument behaviour
+- [ ] Screenshots and a short demo GIF of each module
 
 ---
 
-## 🗂️ Project Structure
+## Project structure
 
 ```text
-📦 dara-astronomy-practicals
- ┣ 📜 app.py             # Streamlit entry point
- ┣ 📜 requirements.txt   # Python dependencies
- ┗ 📜 README.md          # You are here ✨
+.
+├── app.py              Streamlit entry point
+├── requirements.txt    Python dependencies
+└── README.md
 ```
 
 ---
 
 <div align="center">
 
-### 👋 Author
+**Luthando Candlovu** · Computer Science Honours · South Africa
 
-**Luthando Candlovu**
-Participant in the Traning · South Africa 🇿🇦
+[![GitHub](https://img.shields.io/badge/GitHub-LuthandoCandlovu-0B1F3A?style=flat-square&logo=github&logoColor=F5B942)](https://github.com/LuthandoCandlovu)
 
-[![GitHub](https://img.shields.io/badge/GitHub-LuthandoCandlovu-0B1F3A?style=for-the-badge&logo=github&logoColor=F5B942)](https://github.com/LuthandoCandlovu)
-
-*Built with curiosity under African skies* 🌌
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:F5B942,50:0E7C86,100:0B1F3A&height=120&section=footer&animation=twinkling" alt="footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:F5B942,55:0E7C86,100:0B1F3A&height=110&section=footer&animation=twinkling" alt="" width="100%"/>
 
 </div>
